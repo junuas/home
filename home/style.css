@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+*{
+    box-sizing: border-box;/*content, padding,border all these inside of width*/
+    padding: 0;
+    margin: 0;/* we dont need extra margin and extra paddin, we have it by default*/
+
+}
+:root{
+    --text-color:#333;
+    --primary-color:#79589f;
+}
+body{
+    color: var(--text-color);/*import copy witout style heshtag an dput it to the top of css.*/
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+    color: var(--text-color);
+}
+h1, h2{
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+p{
+    margin: 10px 0;
+ }
+img{
+    width: 100%;/* it will take its parent's width*/
+}
+/*navbar*/
+.navbar{
+    background-color: var(--primary-color);
+    height: 70px;
+    color: white;
+
+}
+
+.navbar .flex{
+    justify-content: space-between;/*this one is more specific than flex cuz u specify the parent and class*/
+    
+    }
+.navbar ul{
+    display: flex;
+    /*justify-content: space-around;*/
+}
+.navbar a{
+    color: white;
+    padding: 10px;
+    margin: 0 5px;
+}
+.navbar a:hover{
+    border-bottom: 2px white solid;
+}
+/*showcase*/
+.showcase{
+    height: 400px;
+    background-color: var(--primary-color);
+    color: white;
+    position: relative;
+}
+.showcase h1{
+font-size: 40px;
+}
+.showcase p{
+    margin: 20px 0;
+}
+.showcase .grid{
+    grid-template-columns: 55% auto;
+    gap:30px ;
+    overflow: visible;/*helps get rid of scrool*/
+}
+.showcase-text{
+    /*animation*/
+    animation: slideInFromLeft 1s ease-in;
+}
+.showcase-form{
+    position: relative;/**/
+top: 60px;
+height: 350px;
+width: 400px;
+padding: 40px;
+z-index: 100;
+/*justify-self: flex-end;*/
+/*animati0on*/
+animation: slideInFromRight 1s ease-in/*start slowly*/;
+
+}
+.showcase-form .form-control{
+    margin: 30px 0;
+
+}
+.showcase-form input [ type="text"],.showcase-form input [ type="email"]{
+    border: 0;
+    border-bottom: 1px solid lightslategray;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+.showcase-form input:focus{
+
+}
+.showcase::before /*, .showcase::after*/ {
+    content: "";
+    position: absolute;
+    height: 100px;
+    background: blue;
+    bottom:-70px;
+    right: 0;/*from left to right*/
+    left: 0;
+transform: skewY(-3deg);
+}
+/*utilities*/
+
+.container{
+    max-width: 1100px;
+    margin: 0 auto;/*it will not go al the way right and left*/
+    padding: 0 40px;
+    overflow: auto;/*we fix our white line in the top*/
+}
+
+.flex{
+    display: flex;/* by default flex is row*/
+    flex-direction: row;/*even if write it it doesnt change*/
+    justify-content: center;/* it works for horizontal*/
+    align-items: center;/*it is vertical*/
+    height:100%;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;/*it will help with horizont*/
+    align-items: center;
+    height: 100%;
+}
+.grid-3{
+    grid-template-columns: repeat(3, 1fr);
+}
+.card{
+    background-color: white;
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+padding: 20px;
+margin: 10px;
+
+}
+.btn{
+    padding: 10px 30px;
+    /*display: inline-block;*/
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+
+}
+.btn:hover{
+    transform: scale(0.95);
+}
+.text-center{
+    text-align: center;
+}
+/*stats*/
+.stats{
+    padding-top: 100px;
+
+/*animation*/
+}
+.stats .stats-heading{/*to be more specific u can solve the problem*/
+    max-width: 500px;
+    margin: auto;
+
+}
+/*margins*/
+.my-1{
+    margin: 1rem 0;
+}
+.my-2{
+    margin: 1.5rem 0;
+}
+.my-3{
+    margin: 2rem 0;
+}
+.my-4{
+    margin: 3rem 0;
+}
+.m-1{
+    margin: 1rem;
+}
+.m-2{
+    margin: 1.5rem;
+}
+
+.m-3{
+    margin: 2rem;
+}
+
+.m-4{
+    margin: 3rem;
+}
+
+/*padding*/
+
+    .py-1{
+        margin: 1rem 0;
+    }
+    .py-2{
+        margin: 1.5rem 0;
+    }
+    .py-3{
+        margin: 2rem 0;
+    }
+    .py-4{
+        margin: 3rem 0;
+    }
+    .p-1{
+        margin: 1rem;
+    }
+    .p-2{
+        margin: 1.5rem;
+    }
+    
+    .p-3{
+        margin: 2rem;
+    }
+    
+    .p-4{
+        margin: 3rem;
+    }
+
+.stats .grid h3{
+    font-size: 35px;
+
+}
+.stats .grid p{
+    font-size: 20px;
+    font-weight: bold;
+}
+/*cli*/
+.cli .grid{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+}
+.cli .grid >*:first-child{
+    grid-column: 1/span 2;
+    grid-row: 1/span 2;
+}
+
+@keyframes slideInFromLeft 
+{0%{
+    transform: translateX(-100%);/*horizontal sratr from outside*/
+}
+    100%{
+transform: translateX(0);
+    }
+}
+@keyframes slideInFromRight 
+{0%{
+    transform: translateX(100%);
+}
+100%{
+    transform: translateX(0);
+  }    
+}
+
